@@ -1,4 +1,4 @@
-name: demo-9
+name: demo-9 with env GITHUB_ACTOR
 on:
   push:
     branches: [ main ]
@@ -13,8 +13,8 @@ jobs:
       MY_VAR2: my_value_2_job
     steps:
       - name: "PRINT my_value_1 my_value_2_job"
-        run: echo "$MY_VAR1 {{ env.MY_VAR2 }}"
+        run: echo "$MY_VAR1 ${{ env.MY_VAR2 }}"
       - name: "PRINT my_value_1_step my_value_2_job fpommerening"
-        run: echo "$MY_VAR1 {{ env.MY_VAR2 }} $GITHUB_ACTOR"
+        run: echo "$MY_VAR1 ${{ env.MY_VAR2 }} $GITHUB_ACTOR"
         env:
           MY_VAR1: my_value_1_step
