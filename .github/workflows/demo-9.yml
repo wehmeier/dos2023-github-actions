@@ -4,17 +4,17 @@ on:
     branches: [ main ]
     
 env:
-   MY_VAR1: my_value_1
-   MY_VAR2: my_value_2
+  MY_VAR1: my_value_1
+  MY_VAR2: my_value_2
 jobs:
-   myjob:
-     runs-on: ubuntu-latest
-     env:
-       MY_VAR2: my_value_2_job
-     steps:
-       - name: "PRINT my_value_1 my_value_2_job"
-         run: echo "$MY_VAR1 {{ env.MY_VAR2 }}"
-       - name: "PRINT my_value_1_step my_value_2_job fpommerening"
-         run: echo "$MY_VAR1 {{ env.MY_VAR2 }} $GITHUB_ACTOR"
-         env:
-           MY_VAR1: my_value_1_step
+  myjob:
+    runs-on: ubuntu-latest
+    env:
+      MY_VAR2: my_value_2_job
+    steps:
+      - name: "PRINT my_value_1 my_value_2_job"
+        run: echo "$MY_VAR1 {{ env.MY_VAR2 }}"
+      - name: "PRINT my_value_1_step my_value_2_job fpommerening"
+        run: echo "$MY_VAR1 {{ env.MY_VAR2 }} $GITHUB_ACTOR"
+        env:
+          MY_VAR1: my_value_1_step
