@@ -1,0 +1,11 @@
+name: demo-8 build .NET 6
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+jobs:
+  build:
+   runs-on: ubuntu-latest
+   steps:
+     - name: step checkout
+       uses: actions/checkout@v4
