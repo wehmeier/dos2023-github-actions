@@ -9,3 +9,19 @@ jobs:
    steps:
      - name: step checkout
        uses: actions/checkout@v4
+     - name: step Setup .NET
+       uses: actions/setup-dotnet@v4
+       with:
+         dotnet-version: 6.0.x
+     - name: step restore Dependencies
+       run:
+         dotnet restore DemoApp/Client/src/Client.csproj
+         dotnet restore DemoApp/Server/src/Server.csproj
+     - name: step build
+       run:
+         dotnet build --no-restore DemoApp/Client/src/Client.csproj
+         dotnet build --no-restore DemoApp/Server/src/Server.csproj
+     - name: step publish
+       run:
+         dotnet publish --no-build DemoApp/Client/src/Client.csproj
+         dotnet publish --no-build DemoApp/Server/src/Server.csproj
