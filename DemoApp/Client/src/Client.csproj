@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>FP.GitHubActions.DemoApp.Client</AssemblyName>
+        <RootNamespace>FP.GitHubActions.DemoApp.Client</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+    <Protobuf Include="..\..\Proto\demoapp.proto" GrpcServices="Client" Link="Protos\demoapp.proto" />
+    <PackageReference Include="Google.Protobuf" Version="3.20.1" />
+  <PackageReference Include="Grpc.Net.Client" Version="2.46.0" />
+  <PackageReference Include="Grpc.Tools" Version="2.46.1" PrivateAssets="All" />
+        <PackageReference Include="CommandLineParser" Version="2.8.0" />
+</ItemGroup>
+
+</Project>

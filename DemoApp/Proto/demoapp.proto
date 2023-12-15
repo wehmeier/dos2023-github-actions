@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option csharp_namespace = "FP.GitHubActions.DemoApp.Contract";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+package demoapp;
+
+service DemoAppServices {
+  rpc SendDeployment (stream DeploymentMessage) returns (google.protobuf.Empty);
+  rpc GetVersion (google.protobuf.Empty) returns (GetVersionResponse);
+  
+}
+
+message DeploymentMessage{
+  bytes data = 2;
+  google.protobuf.Timestamp timestamp = 3;
+}
+
+
+message GetVersionResponse {
+  string version = 1;
+  google.protobuf.Timestamp timestamp = 2;
+}
+
+
