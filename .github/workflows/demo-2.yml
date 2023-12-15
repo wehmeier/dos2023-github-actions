@@ -1,4 +1,4 @@
-name: demo-2
+name: demo-2 Say Hallo
 on:
   workflow_dispatch:
     inputs:
