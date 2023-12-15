@@ -1,0 +1,10 @@
+name: demo-1
+on:
+  push:
+    branches: [ main ]
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hallo
+        run: echo DevOpenSpace 2023
