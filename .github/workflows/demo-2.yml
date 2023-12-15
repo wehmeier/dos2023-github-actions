@@ -1,0 +1,22 @@
+name: demo-2
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: Name
+        required: true
+        type: string
+      laune:
+        description: Laune
+        required: true
+        type: choice
+        options:
+          - gut
+          - schlecht
+          - mittel
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hallo
+        run: echo "Hallo. Ich bin ${{ inputs.name }}. Meine Laube ist ${{ inputs.laune }}"
