@@ -1,4 +1,4 @@
-name: demo-5
+name: demo-5 sudo apt-get install mc -y
 on:
   push:
     branches: [ main ]
