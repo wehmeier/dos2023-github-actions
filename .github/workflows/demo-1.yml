@@ -1,4 +1,4 @@
-name: demo-1
+name: demo-1 greeting DevOpenSpace 2023
 on:
   push:
     branches: [ main ]
