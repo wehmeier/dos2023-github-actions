@@ -1,0 +1,10 @@
+name: demo-3
+on:
+  push:
+    branches: [ main ]
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo event
+        run: cat $GITHUB_EVENT_PATH
