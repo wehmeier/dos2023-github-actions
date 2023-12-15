@@ -1,4 +1,4 @@
-name: demo-3
+name: demo-3 GITHUB_EVENT_PATH
 on:
   push:
     branches: [ main ]
